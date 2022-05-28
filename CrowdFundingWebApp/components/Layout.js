@@ -1,11 +1,12 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 import Header from './Header';
 
 export default () => {
   return (
-    <div>
       <Header/>
+    <Container>
       {props.children}
-    </div>
+    </Container>
   );
 };
