@@ -5,4 +5,8 @@ class CampaignIndex extends Component {
   async componentDidMount() {
      const campaigns = await factory.methods.getDeployedCampaigns().call();
   }
+  
+  render() {
+    return <div>Campaigns Index!</div>
+  }
 }
