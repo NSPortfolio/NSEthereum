@@ -4,8 +4,8 @@ import Header from './Header';
 
 export default () => {
   return (
-      <Header/>
     <Container>
+      <Header/>
       {props.children}
     </Container>
   );
