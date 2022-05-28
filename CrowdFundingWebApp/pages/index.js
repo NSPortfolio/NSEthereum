@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import factory from '../ethereum/factory';
 import { Card } from 'semantic-ui-react';
+import Layout from '../components/Layout';
 
 class CampaignIndex extends Component {
   static async getInitialProps() {
