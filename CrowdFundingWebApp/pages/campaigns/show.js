@@ -64,6 +64,7 @@ class CampaignShow extends Component {
       <Layout>
         <h3>Campaign Show</h3>
       {this.renderCards()}
+      <ContributeForm />
       </Layout>
     );
   }
