@@ -14,7 +14,7 @@ class ContributeForm extends Component {
   onSubmit = async event => {
     event.preventDefault();
     const campaign = Campaign(this.props.address);
-    this.setState({ loading:true });
+    this.setState({ loading:true, errorMessage='' });
     try {
       const accounts = await web3.eth.getAccounts();
       await campaign.methods.contribute().send({
@@ -40,6 +40,7 @@ class ContributeForm extends Component {
             labelPosition="right"
           />
         </Form.Field>
+        <Message error header="Oops!" content={this.state.errorMessage} />
         <Button primary loading={this.state.loading}>Contribute!</Button>
       </Form>
     );
