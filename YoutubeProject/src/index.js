@@ -18,6 +18,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList />
       </div>;
     );
   }
