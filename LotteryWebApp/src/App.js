@@ -23,7 +23,7 @@ function App() {
     this.setState({ message: 'Waiting on transaction...' });
     await lottery.methods.enter().send({
       from: accounts[0],
-      value: wb3.utils.toWei(this.state.value, 'ether');
+      value: wb3.utils.toWei(this.state.value, 'ether'),
     });
     this.setState({ message:'You have been entered!' });
   };
