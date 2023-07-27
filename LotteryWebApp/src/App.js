@@ -5,7 +5,7 @@ function App() {
   state = {
     manager = '',
     players: [],
-    balance: '';
+    balance: '',
     value: '',
     message: '',
   };
