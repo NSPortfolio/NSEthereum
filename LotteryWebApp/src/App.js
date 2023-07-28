@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   state = {
-    manager = '',
+    manager : '',
     players: [],
     balance: '',
     value: '',
@@ -14,7 +14,7 @@ function App() {
     const manager = await lottery.methods.manager().call();
     const players = await lottery.methods.getPlayers.call();
     const balance = await web3.eth.getBalance(lottery.options.address);
-    this setState({ manager, players, balance });
+    this.setState({ manager, players, balance });
   }
   
   onSubmit = async (event) => {
@@ -23,7 +23,7 @@ function App() {
     this.setState({ message: 'Waiting on transaction...' });
     await lottery.methods.enter().send({
       from: accounts[0],
-      value: wb3.utils.toWei(this.state.value, 'ether'),
+      value: web3.utils.toWei(this.state.value, 'ether'),
     });
     this.setState({ message:'You have been entered!' });
   };
@@ -42,7 +42,7 @@ function App() {
       <div>
         <h2>Lottery Contract</h2>
         <p>This contract is managed by {this.state.manager}.
-           There are currently {this.state.players.length} people entered competing to win {web.utils.fromWei(this.state.balance, 'ether')} ether!
+           There are currently {this.state.players.length} people entered competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
         </p>
         <hr />
         <form onSubmit={this.onSubmit}>
@@ -51,7 +51,7 @@ function App() {
             <label> Amount of ether to enter </label>
             <input
               value={this.state.value}
-              onChange={event => this.setstate({ value:event.target.value })}
+              onChange={event => this.setState({ value:event.target.value })}
             />
           </div>
           <button>Enter</button>
