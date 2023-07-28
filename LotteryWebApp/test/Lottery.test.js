@@ -32,9 +32,9 @@ describe('Lottery Contract', () => {
       from:accounts[2],
       value: web3.utils.toWei('.02', 'ether')
     });
-    lottery.methods.getPlayers().call({
+    const players = await lottery.methods.getPlayers().call({
         from: accounts[0]
-      });
+    });
     assert.equal(accounts[0], players[0]);
     assert.equal(accounts[1], players[1]);
     assert.equal(accounts[2], players[2]);
