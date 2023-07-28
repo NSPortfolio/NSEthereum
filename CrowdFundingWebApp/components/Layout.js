@@ -12,5 +12,5 @@ export default (props) => {
       <Header/>
       {props.children}
     </Container>
-  )
+  );
 }
