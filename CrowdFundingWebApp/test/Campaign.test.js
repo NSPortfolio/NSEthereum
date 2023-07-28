@@ -1,5 +1,5 @@
 const assert = require('assert');
-const ganache = require('ganache-cli);
+const ganache = require('ganache-cli');
 const Web3 = require('web3');
 const web3 = new Web3(ganache.provider());
 
@@ -34,7 +34,7 @@ describe('Campaigns', () => {
     assert.equal(accounts[0], manager);
   });
   it('allows people to contribute money and marks them as approvers', async () => {
-    await compaign.methods.contribute().send({
+    await campaign.methods.contribute().send({
       value: '200',
       from: accounts[1]
     });
